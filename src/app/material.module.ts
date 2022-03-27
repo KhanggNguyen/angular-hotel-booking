@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDividerModule } from '@angular/material/divider';
 @NgModule({
   imports: [
     MatCardModule,
@@ -17,6 +18,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatIconModule,
     MatListModule,
     MatTabsModule,
+    MatDividerModule
   ],
   exports: [
     MatCardModule,
@@ -27,6 +29,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatIconModule,
     MatListModule,
     MatTabsModule,
+    MatDividerModule
   ],
 })
 export class MaterialModule {}

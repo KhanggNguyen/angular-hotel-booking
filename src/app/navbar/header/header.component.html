@@ -1,11 +1,11 @@
-<mat-toolbar color="default">
+<mat-toolbar class="header-container" fxHide fxShow.lt-md>
   <div>
-    <button mat-icon-button (click)="onToggleSidenav()">
+    <button mat-icon-button (click)="onToggleSidenav()" fxHide fxShow.lt-md>
       <mat-icon>menu</mat-icon>
     </button>
   </div>
   <div class="logo-container">
-    <div fxLayout="column" fxLayoutAlign="center center">
+    <div fxLayout="column" fxLayoutAlign.lt-md="center flex-end" >
       <img class="logo" src="assets/images/hotel-logo-sample.png" />
     </div>
   </div>

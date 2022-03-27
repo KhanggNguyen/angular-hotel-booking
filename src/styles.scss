@@ -1,5 +1,36 @@
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+@use '@angular/material' as mat;
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined');
+@import '~@angular/material/theming';
 /* You can add global styles to this file, and also import other style files */
+@include mat-core();
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+$primary-color: mat.define-palette(mat.$teal-palette, 500, 100, 900);
+$accent-color: mat.define-palette(mat.$cyan-palette, A200, A100, A400);
+$warn-color: mat.define-palette(mat.$red-palette);
+
+$hotel-default-theme: mat.define-light-theme($primary-color, $accent-color, $warn-color);
+
+@import '/src/app/navbar/header/header.component.scss';
+@import '/src/app/navbar/navtabs/navtabs.component.scss';
+@import '/src/app/navbar/sidenav-list/sidenav-list.component.scss';
+@import '/src/app/layout-footer/layout-footer.component.scss';
+
+@include mat.all-component-themes($hotel-default-theme);
+
+@include header-component-theme($hotel-default-theme);
+@include angular-material-theme($hotel-default-theme);
+@include navtabs-component-theme($hotel-default-theme);
+@include sidenav-component-theme($hotel-default-theme);
+@include footer-component-theme($hotel-default-theme);
+
+/* custom styles below */
+
+html,
+body {
+    height: 100%;
+    min-width: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
