@@ -1,14 +1,25 @@
-.logo-container{
-    width: 100%;
-    margin-right: 40px;
-}
+@import '~@angular/material/theming';
 
-.logo{
-    max-height: 100px;
-    max-width: 100px;
-    width: 100%;
-}
+@mixin header-component-theme($hotel-theme) {
+    $primary-color: map-get($hotel-theme, primary);
+    $primary-accent: map-get($hotel-theme, accent);
 
-mat-toolbar{
-    height: 96px;
+    .mat-toolbar {
+        height: 96px;
+    }
+
+    .logo-container {
+        width: 100%;
+    }
+
+    .logo {
+        max-height: 100px;
+        max-width: 100px;
+        width: 100%;
+    }
+
+    .mat-tab-nav-bar,
+    .mat-tab-header {
+        border-bottom: none !important;
+    }
 }

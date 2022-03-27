@@ -1,16 +1,18 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav>
-    <div>
-      <button mat-button (click)="sidenav.toggle()">
-        <mat-icon>close</mat-icon>Close
-      </button>
-    </div>
-    <app-sidenav-list (closeSidenav)="sidenav.close()"></app-sidenav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
-    <app-navtabs></app-navtabs>
-  </mat-sidenav-content>
-  <router-outlet></router-outlet>
+    <mat-sidenav #sidenav>
+        <div class="sidenav-close-container">
+            <button mat-button (click)="sidenav.toggle()">
+                <mat-icon> close </mat-icon>
+            </button>
+        </div>
+        <app-sidenav-list (closeSidenav)="sidenav.close()"></app-sidenav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+        <app-navtabs></app-navtabs>
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+    </mat-sidenav-content>
 </mat-sidenav-container>
 <app-layout-footer></app-layout-footer>

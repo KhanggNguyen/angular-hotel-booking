@@ -16,27 +16,20 @@ import { SidenavListComponent } from './navbar/sidenav-list/sidenav-list.compone
 import { HeaderComponent } from './navbar/header/header.component';
 import { NavtabsComponent } from './navbar/navtabs/navtabs.component';
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    LayoutFooterComponent,
-    HomeComponent,
-    ContactComponent,
-    OffersComponent,
-    /* navbar components */
-    SidenavListComponent,
-    HeaderComponent,
-    NavtabsComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    FlexLayoutModule,
-    AuthModule,
-    MaterialModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        LayoutFooterComponent,
+        HomeComponent,
+        ContactComponent,
+        OffersComponent,
+        /* navbar components */
+        SidenavListComponent,
+        HeaderComponent,
+        NavtabsComponent,
+    ],
+    imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, FlexLayoutModule, AuthModule, MaterialModule],
+    providers: [],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

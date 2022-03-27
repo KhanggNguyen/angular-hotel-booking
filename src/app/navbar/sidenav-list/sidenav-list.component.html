@@ -1,20 +1,75 @@
-<mat-nav-list class="sidenav-list">
-  <a mat-list-item routerLink="/signin" (click)="onToggleClose()"
-    ><mat-icon>input</mat-icon><span>Sign in</span></a
-  >
-  <a mat-list-item routerLink="/signup" (click)="onToggleClose()"
-    ><mat-icon>account_circle</mat-icon><span>Sign up</span></a
-  >
-  <a mat-list-item routerLink="/accommodation" (click)="onToggleClose()"
-    ><mat-icon>hotel</mat-icon><span>Accommodation</span></a
-  >
-  <a mat-list-item routerLink="/food-beverage" (click)="onToggleClose()"
-    ><mat-icon
-      ><span class="material-icons-outlined"> lunch_dining </span></mat-icon
-    ><span>Food & Beverage</span></a
-  >
-  <a mat-list-item routerLink="/offers" (click)="onToggleClose()"
-    ><mat-icon class="material-icons-outlined">local_offer_outlined</mat-icon
-    ><span>Offers</span></a
-  >
-</mat-nav-list>
+<div class="sidenav-container" fxHide fxShow.lt-md>
+    <mat-nav-list class="sidenav-list">
+        <a
+            mat-list-item
+            routerLink="/signin"
+            routerLinkActive
+            #signin="routerLinkActive"
+            [attr.tabindex]="signin.isActive ? 0 : -1"
+            [class.list-item-active]="signin.isActive"
+            (click)="onToggleClose()"
+        >
+            <mat-icon> input </mat-icon> <span class="route-name"> Sign in </span>
+        </a>
+        <a
+            mat-list-item
+            routerLink="/signup"
+            routerLinkActive
+            #signup="routerLinkActive"
+            [attr.tabindex]="signup.isActive ? 0 : -1"
+            [class.list-item-active]="signup.isActive"
+            (click)="onToggleClose()"
+        >
+            <mat-icon class="material-icons-outlined"> account_circle </mat-icon
+            ><span class="route-name"> Sign up </span>
+        </a>
+        <mat-divider></mat-divider>
+        <a
+            mat-list-item
+            routerLink="/"
+            routerLinkActive
+            #home="routerLinkActive"
+            [attr.tabindex]="home.isActive ? 0 : -1"
+            [class.list-item-active]="home.isActive"
+            (click)="onToggleClose()"
+            [routerLinkActiveOptions]="{ exact: true }"
+        >
+            <mat-icon class="material-icons-outlined"> home </mat-icon> <span class="route-name"> Home </span>
+        </a>
+        <a
+            mat-list-item
+            routerLink="/accommodation"
+            routerLinkActive
+            #accommodation="routerLinkActive"
+            [attr.tabindex]="accommodation.isActive ? 0 : -1"
+            [class.list-item-active]="accommodation.isActive"
+            (click)="onToggleClose()"
+        >
+            <mat-icon class="material-icons-outlined"> hotel </mat-icon> <span class="route-name"> Accommodation </span>
+        </a>
+        <a
+            mat-list-item
+            routerLink="/food-beverage"
+            routerLinkActive
+            #foodbeverage="routerLinkActive"
+            [attr.tabindex]="foodbeverage.isActive ? 0 : -1"
+            [class.list-item-active]="foodbeverage.isActive"
+            (click)="onToggleClose()"
+        >
+            <mat-icon class="material-icons-outlined"> <span> lunch_dining </span> </mat-icon>
+            <span class="route-name">Food & Beverage</span>
+        </a>
+        <a
+            mat-list-item
+            routerLink="/offers"
+            routerLinkActive
+            #offers="routerLinkActive"
+            [attr.tabindex]="offers.isActive ? 0 : -1"
+            [class.list-item-active]="offers.isActive"
+            (click)="onToggleClose()"
+        >
+            <mat-icon class="material-icons-outlined"> local_offer_outlined </mat-icon>
+            <span class="route-name"> Offers </span>
+        </a>
+    </mat-nav-list>
+</div>

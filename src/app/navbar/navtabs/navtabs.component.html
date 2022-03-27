@@ -1,11 +1,50 @@
-<nav mat-tab-nav-bar>
-  <span class="toolbar-flex"></span>
-  <mat-tab-group>
-    <mat-tab label="hello1"></mat-tab>
-    <mat-tab label="hello12"></mat-tab>
-    <mat-tab label="hello13"></mat-tab>
-    <mat-tab label="hello14"></mat-tab>
-    <mat-tab label="hello15"></mat-tab>
-  </mat-tab-group>
-  <span class="toolbar-flex"></span>
-</nav>
+<div class="navtabs-container" fxHide.lt-md>
+    <nav mat-tab-nav-bar fxFlex fxLayout="column">
+        <div class="logo-container">
+            <a
+                mat-tab-link
+                routerLink="/"
+                routerLinkActive
+                #home="routerLinkActive"
+                [active]="home.isActive"
+                [routerLinkActiveOptions]="{ exact: true }"
+            >
+                <div fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign.lt-md="center flex-end">
+                    <img class="logo" src="assets/images/hotel-logo-sample.png" />
+                </div>
+            </a>
+        </div>
+        <div class="modules-container">
+            <a
+                mat-tab-link
+                routerLink="/accommodation"
+                routerLinkActive
+                #accommodation="routerLinkActive"
+                [active]="accommodation.isActive"
+            >
+                Accommodation
+            </a>
+            <a
+                mat-tab-link
+                routerLink="/lifestyle"
+                routerLinkActive
+                #lifestyle="routerLinkActive"
+                [active]="lifestyle.isActive"
+            >
+                Life Style
+            </a>
+            <a
+                mat-tab-link
+                routerLink="/food-beverage"
+                routerLinkActive
+                #foodBeverage="routerLinkActive"
+                [active]="foodBeverage.isActive"
+            >
+                Food & Beverage
+            </a>
+            <a mat-tab-link routerLink="/offers" routerLinkActive #offers="routerLinkActive" [active]="offers.isActive">
+                Offers
+            </a>
+        </div>
+    </nav>
+</div>

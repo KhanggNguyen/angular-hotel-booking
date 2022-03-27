@@ -8,7 +8,7 @@ import { LifestyleComponent } from './lifestyle/lifestyle.component';
 import { OffersComponent } from './offers/offers.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, pathMatch: "full" },
   {
     path: 'accommodation',
     component: AccommodationComponent,
