@@ -1,0 +1,45 @@
+.container{
+    height: calc(100vh - 100px);
+    background-image: url("/assets/images/hotel-landing-page.jpeg");
+    background-position: bottom center;
+    overflow: hidden;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+}
+
+::ng-deep .mat-form-field {
+    margin: 0 1em;
+}
+
+form{
+    display:flex;
+}
+
+.banner-container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.banner > form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+
+button[type=submit]{
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 150px;
+    border-radius: 50px;
+    border-color: transparent;
+    color: white;
+    margin-top: 5px;
+    background-color: orange;
+    text-transform: uppercase;
+    &:hover{
+        cursor: pointer;
+    }
+}

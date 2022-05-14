@@ -16,6 +16,7 @@ $color: #fbfbfb;
     max-height: 100px;
     max-width: 100px;
     width: 100%;
+    opacity: 1;
 }
 
 @mixin navtabs-component-theme($hotel-theme) {
@@ -29,6 +30,7 @@ $color: #fbfbfb;
         padding: 0 10px;
         background-color: transparent;
         position: sticky;
+        top:0;
         z-index: 100;
         transition: background-color 1s ease 0s;
         //background-color: mat-color($primary-color, 50);
@@ -39,7 +41,7 @@ $color: #fbfbfb;
 
         .modules-container .mat-tab-label-active {
             background-color: $background-color;
-            color: #fff;
+            color: mat-color($primary-accent, 500);
             opacity: 1;
             border-radius: 10px 10px;
             transition: 500ms cubic-bezier(0.35, 0, 0.25, 1);

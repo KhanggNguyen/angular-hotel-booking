@@ -1,1 +1,55 @@
-<p>home works!</p>
+<div class="container">
+    <div class="banner-container">
+        <div class="banner" fxFlex fxLayoutAlign="center center" >
+            <form [formGroup]="ngForm" novalidate>
+                <mat-form-field class="booking-form-field" appearance="outline">
+                    <mat-label> Date </mat-label>
+                    <mat-date-range-input [min]="minDate" [formGroup]="range" [rangePicker]="picker">
+                        <input matStartDate placeholder="Start date" formControlName="start" />
+                        <input matEndDate placeholder="End date" formControlName="end" />
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="picker">
+                        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-date-range-picker #picker></mat-date-range-picker>
+                </mat-form-field>
+                <mat-form-field appearance="outline" hintLabel="total children are required">
+                    <mat-label>Children</mat-label>
+                    <mat-select matNativeControl name="children" formControlName="children">
+                        <mat-option *ngFor="let childrenCounter of maxChildren" [value]="childrenCounter">
+                            {{ childrenCounter }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline" hintLabel="total adult are required">
+                    <mat-label>Adult</mat-label>
+                    <mat-select matNativeControl name="adult" formControlName="adult">
+                        <mat-option *ngFor="let adultCounter of maxAdult" [value]="adultCounter">
+                            {{ adultCounter }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <button class="book-button" color="primary" type="submit" [disabled]="!ngForm.valid">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="about" id="about">
+        <div class="image">
+            <div class="image-left">
+                <img src="#" alt="about-image-left"/>
+            </div>
+            <div class="image-right">
+                <img src="#" alt="about-image-right" />
+            </div>
+        </div>
+        <div class="content">
+            <h3>Get Ready For Real Time Adventure</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus sapien leo. Vestibulum finibus elit nec eros iaculis, sed feugiat ipsum laoreet. Fusce nec sapien orci. Aenean efficitur eros eu orci fermentum convallis. Sed finibus vehicula est, in rhoncus felis feugiat a. Aliquam et ultricies ex, convallis malesuada sem. Ut quis egestas urna.</p>
+            <div class="statistique">
+                <div class="statistique-left"></div>
+                <div class="statistique-center"></div>
+                <div class="statistique-right"></div>
+            </div>
+        </div>  
+    </div>
+</div>
